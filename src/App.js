@@ -1,15 +1,22 @@
-import './App.css';
-import Header from './components/Header/Header';
+import Container from "@mui/material/Container";
+import "./App.css";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Navbar from "./components/MUI/Navbar";
+import Card from "./components/MUI/MyCard";
+import CardList from "./components/MUI/CardList";
 
 function App() {
-
-  const myName = "Saim";
-  const myExp = 14
-  const myPosition = 'Full Stack Engineer'
-
   return (
     <div className="App">
-     <Header name={myName} exp={myExp} position={myPosition}/>
+      <Container maxWidth={false} sx={{ backgroudColor: "#fcfcfc" }}>
+        <Box sx={{ padding: "20px", textAlign: "left" }}>
+          <Typography fontWeight={600} fontSize={36} sx={{color:"#fcfcfc"}}>MY TECH STORE</Typography>
+        </Box>
+        
+        <CardList />
+        
+      </Container>
     </div>
   );
 }
