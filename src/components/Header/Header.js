@@ -14,6 +14,7 @@ const Header = ({ name, exp, position }) => {
     const response = await axios
       .get("https://dummyjson.com/products")
       .then((response) => {
+        console.log(response.data.products)
         setProduct(response.data.products);
       })
       .catch((e) => {
@@ -35,10 +36,6 @@ const Header = ({ name, exp, position }) => {
 
   return (
     <div>
-      <h1 className={styles.header}>Portfolio Website of {name}</h1>
-      <SubHeader exp={exp} position={position} />
-      <p>{number}</p>
-      <button onClick={() => addNumber()}>Add</button>
       <SubComponent product={product} />
     </div>
   );
